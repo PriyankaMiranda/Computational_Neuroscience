@@ -1,0 +1,24 @@
+A = 5;
+fibonacci(A)
+
+
+function [val] = fibonacci(i)
+    if(i == 0) | (i == 1)
+        val=1;
+        
+    x = max(A);
+end
+
+
+
+function [val] = fibonacci(i)
+  if (i == 0) | (i == 1)
+    val = 1;
+    fprintf('-- At the bottom of the recursion, here''s the call stack:\n');
+    dbstack;
+    fprintf('-- Now we''re at a breakpoint.  (Type ''dbcont'' to exit debug mode...)');
+    keyboard;
+    fprintf('-- We''re past the breakpoint.  The function should return from execution soon...\n');
+  else
+    val = i + fibonacci(i-1);
+  end
